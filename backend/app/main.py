@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import route, report, sos, safety
+from app.api.routes import route, report, sos, safety, geocoding  # Add geocoding
 
 app = FastAPI(
     title="Safety Route API",
@@ -16,6 +16,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
+        "*"  # Add this for testing - remove in production
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -49,13 +50,27 @@ app.include_router(
     tags=["Safety"]
 )
 
+# Register geocoding API (NEW)
+app.include_router(
+    geocoding.router,
+    tags=["Geocoding"]
+)
+
 # Root endpoint
 @app.get("/")
 async def root():
     return {
         "message": "Safety Route API is running",
         "status": "healthy",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "endpoints": {
+            "routes": "/routes",
+            "reports": "/reports",
+            "sos": "/sos",
+            "safety": "/safety",
+            "geocoding": "/geocoding",
+            "docs": "/docs"
+        }
     }
 
 # Health check
