@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.routes import route, report
+from app.api.routes import route, report,sos
 
 app = FastAPI(
     title="Safety Route API",
@@ -19,6 +19,11 @@ app.include_router(
     report.router,
     prefix="/reports",
     tags=["Reports"]
+)
+app.include_router(
+    sos.router,
+    prefix="/sos",
+    tags=["SOS"]
 )
 
 # Root endpoint
