@@ -80,3 +80,15 @@ def health_check():
         "status": "ok",
         "message": "Safety Route backend is running"
     }
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/ping")
+def ping():
+    return {"status": "ok", "message": "backend connected"}

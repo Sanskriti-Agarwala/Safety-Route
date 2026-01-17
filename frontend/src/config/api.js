@@ -32,3 +32,13 @@ export const ENDPOINTS = {
   // Health
   health: '/health',
 };
+
+fetch("http://127.0.0.1:8000/ping")
+  .then(res => res.json())
+  .then(data => {
+    console.log("CONNECTED:", data);
+    alert("Backend connected!");
+  })
+  .catch(err => {
+    console.error("FAILED:", err);
+  });
