@@ -340,3 +340,56 @@ def get_score_description(score: float) -> str:
         return "Below average safety. Consider alternative routes if possible."
     else:
         return "Poor safety rating. This route is not recommended. Consider alternatives."
+    
+# ============================================================================
+# ROUTE COMPARISON & SELECTION UTILITIES
+# ============================================================================
+
+def find_safest_route(routes: List[Dict]) -> Dict:
+    """Find the route with highest safety score."""
+    if not routes:
+        return {}
+    return max(routes, key=lambda r: r.get("safety_score", 0))
+
+
+def rank_routes_by_safety(routes: List[Dict]) -> List[Dict]:
+    """Sort routes by safety score (safest first)."""
+    return sorted(routes, key=lambda r: r.get("safety_score", 0), reverse=True)
+
+
+def should_show_warning(score: float, threshold: float = MINIMUM_SAFE_SCORE) -> bool:
+    """Check if safety warning should be displayed."""
+    return score < threshold
+
+
+def calculate_score_improvement(base_score: float, new_score: float) -> Dict[str, float]:
+    """Calculate improvement between two safety scores."""
+    difference = new_score - base_score
+    percent_change = (difference / base_score * 100) if base_score > 0 else 0
+    
+    return {
+        "difference": round(difference, 2),
+        "percent_change": round(percent_change, 2),
+        "improved": difference > 0
+    }
+
+
+def get_score_statistics(scores: List[float]) -> Dict[str, float]:
+    """
+    Calculate statistics for a set of safety scores.
+    
+    Useful for analyzing multiple routes or generating reports.
+    
+    Returns:
+        Dict with 'mean', 'median', 'min', 'max', 'range'
+    """
+    if not scores:
+        return {"mean": 0, "median": 0, "min": 0, "max": 0, "range": 0}
+    
+    return {
+        "mean": round(sum(scores) / len(scores), 2),
+        "median": round(sorted(scores)[len(scores) // 2], 2),
+        "min": round(min(scores), 2),
+        "max": round(max(scores), 2),
+        "range": round(max(scores) - min(scores), 2)
+    }
