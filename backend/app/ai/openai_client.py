@@ -1,16 +1,25 @@
-import os
-from ai import OpenAI
+from openai import OpenAI
+from app.core.config import get_settings
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+settings = get_settings()
 
-def call_llm(prompt: str, model: str = "gpt-4", max_tokens: int = 1000, temperature: float = 0.7) -> str:
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
+
+
+def call_llm(prompt: str, model: str = "gpt-4", max_tokens: int = 500) -> str:
+    """
+    Call OpenAI API with a prompt.
+    """
     try:
         response = client.chat.completions.create(
             model=model,
-            messages=[{"role": "user", "content": prompt}],
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
             max_tokens=max_tokens,
-            temperature=temperature
+            temperature=0.7
         )
-        return response.choices[0].message.content.strip()
+        return response.choices[0].message.content
     except Exception as e:
-        return f"Error calling OpenAI API: {str(e)}"
+        print(f"OpenAI API error: {e}")
+        return ""
