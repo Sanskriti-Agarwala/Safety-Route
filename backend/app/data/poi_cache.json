@@ -1,0 +1,112 @@
+{
+  "pois": [
+    {
+      "id": "poi_001",
+      "name": "Central Police Station",
+      "category": "police_station",
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "is_open_24x7": true,
+      "contact": "+91-44-28474000"
+    },
+    {
+      "id": "poi_002",
+      "name": "City General Hospital",
+      "category": "hospital",
+      "latitude": 13.0878,
+      "longitude": 80.2785,
+      "is_open_24x7": true,
+      "contact": "+91-44-28192000"
+    },
+    {
+      "id": "poi_003",
+      "name": "Apollo Pharmacy T Nagar",
+      "category": "pharmacy",
+      "latitude": 13.0418,
+      "longitude": 80.2341,
+      "is_open_24x7": true,
+      "contact": "+91-44-24340123"
+    },
+    {
+      "id": "poi_004",
+      "name": "Anna Nagar Police Outpost",
+      "category": "police_station",
+      "latitude": 13.0850,
+      "longitude": 80.2101,
+      "is_open_24x7": true,
+      "contact": "+91-44-26201234"
+    },
+    {
+      "id": "poi_005",
+      "name": "24x7 MedPlus Pharmacy",
+      "category": "pharmacy",
+      "latitude": 13.0569,
+      "longitude": 80.2425,
+      "is_open_24x7": true,
+      "contact": "+91-44-24567890"
+    },
+    {
+      "id": "poi_006",
+      "name": "Express Avenue Mall",
+      "category": "public_place",
+      "latitude": 13.0569,
+      "longitude": 80.2602,
+      "is_open_24x7": false,
+      "contact": "+91-44-42244224"
+    },
+    {
+      "id": "poi_007",
+      "name": "Adyar Emergency Clinic",
+      "category": "hospital",
+      "latitude": 13.0067,
+      "longitude": 80.2570,
+      "is_open_24x7": true,
+      "contact": "+91-44-24910000"
+    },
+    {
+      "id": "poi_008",
+      "name": "Porur Police Station",
+      "category": "police_station",
+      "latitude": 13.0358,
+      "longitude": 80.1569,
+      "is_open_24x7": true,
+      "contact": "+91-44-23780123"
+    },
+    {
+      "id": "poi_009",
+      "name": "Saravana Bhavan Restaurant",
+      "category": "open_shop",
+      "latitude": 13.0475,
+      "longitude": 80.2345,
+      "is_open_24x7": true,
+      "contact": "+91-44-24360777"
+    },
+    {
+      "id": "poi_010",
+      "name": "Phoenix MarketCity",
+      "category": "public_place",
+      "latitude": 13.0103,
+      "longitude": 80.2195,
+      "is_open_24x7": false,
+      "contact": "+91-44-71226000"
+    },
+    {
+      "id": "poi_011",
+      "name": "Lifeline Pharmacy Vadapalani",
+      "category": "pharmacy",
+      "latitude": 13.0504,
+      "longitude": 80.2121,
+      "is_open_24x7": false,
+      "contact": "+91-44-23611234"
+    },
+    {
+      "id": "poi_012",
+      "name": "24/7 Coffee Shop - OMR",
+      "category": "open_shop",
+      "latitude": 12.9356,
+      "longitude": 80.2297,
+      "is_open_24x7": true,
+      "contact": "+91-44-24449876"
+    }
+  ]
+}
