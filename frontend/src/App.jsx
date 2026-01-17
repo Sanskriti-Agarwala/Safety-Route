@@ -10,11 +10,11 @@ function App() {
   const [error, setError] = useState(null);
 
   const analyzeSafety = async () => {
-    setLoading(true);
-    setError(null);
-    setResult(null);
+  setLoading(true);
+  setError(null);
+  setResult(null);
 
-    try {
+  try {
       const response = await fetch('http://localhost:8000/safety/analyze', {
         method: 'POST',
         headers: {
@@ -40,6 +40,7 @@ function App() {
       setLoading(false);
     }
   };
+
 
   const getRiskColor = (level) => {
     if (level === 'low') return '#10b981';
