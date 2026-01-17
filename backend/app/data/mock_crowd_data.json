@@ -1,0 +1,28 @@
+{
+  "areas": [
+    {
+      "id": "crowd_1",
+      "location": {"lat": 20.2970, "lng": 85.8250},
+      "radius": 400,
+      "crowd_level": "high",
+      "time_pattern": {
+        "morning": "high",
+        "afternoon": "very_high",
+        "evening": "medium",
+        "night": "low"
+      }
+    },
+    {
+      "id": "crowd_2",
+      "location": {"lat": 20.3000, "lng": 85.8300},
+      "radius": 300,
+      "crowd_level": "medium",
+      "time_pattern": {
+        "morning": "medium",
+        "afternoon": "medium",
+        "evening": "low",
+        "night": "very_low"
+      }
+    }
+  ]
+}

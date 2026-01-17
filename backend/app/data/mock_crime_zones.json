@@ -1,0 +1,34 @@
+{
+  "zones": [
+    {
+      "id": "crime_zone_1",
+      "type": "high_crime",
+      "center": {"lat": 20.2961, "lng": 85.8245},
+      "radius": 500,
+      "severity": "high",
+      "description": "High crime rate area - avoid after 8 PM",
+      "incidents": 45,
+      "last_updated": "2025-01-15"
+    },
+    {
+      "id": "crime_zone_2",
+      "type": "medium_crime",
+      "center": {"lat": 20.3021, "lng": 85.8350},
+      "radius": 300,
+      "severity": "medium",
+      "description": "Moderate crime area - caution advised",
+      "incidents": 22,
+      "last_updated": "2025-01-14"
+    },
+    {
+      "id": "dark_zone_1",
+      "type": "poor_lighting",
+      "center": {"lat": 20.2985, "lng": 85.8280},
+      "radius": 200,
+      "severity": "medium",
+      "description": "Poorly lit street - unsafe after dark",
+      "incidents": 8,
+      "last_updated": "2025-01-16"
+    }
+  ]
+}
